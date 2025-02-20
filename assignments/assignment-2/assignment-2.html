@@ -3,7 +3,7 @@
 
 
 <head>
-     <meta charset="UTC-8">
+     <meta charset="UTF-8">
      <meta name="viewport" content = "width = device-width,initial-scale = 1.0">
         <Title>
         Elton Nhan Portfolio
@@ -11,39 +11,37 @@
     </head>
 
     <body>
-        <em><h1 id = "Name"> Elton Nhan</h1><em>
+        <header id = "Name"> <h1>Elton Nhan </h1></header>
             <img src="images/IMG_2136.JPG" alt="A picture of me!" width="244"> 
 
             <header id = "Bio">
      <ul>  
-        <a href="#Education"> Education </a> <br>
-            <a href="#Work_Experience"> Work Experience </a> <br>
-                <a href="#Contact"> Contact </a> <br>
+        <li><h2><a href="#Education"> Education </a></h2></li> 
+            <li><h2><a href="#Skills"> Skills </a></h2></li> 
+                <li><h2><a href="#Contact"> Contact </a></h2></li> 
                     </ul>
             <h1>About Me</h1>
            
         </header>
 
-        <section>
-            <article>
-                <p>My name is Elton Nhan and I was born in San Francisco, California February 2nd, 2001. <br>
+        <section>   
+                    <h2>My name is Elton Nhan and I was born in San Francisco, California February 2nd, 2001. </h2><br>
                     <img src="images/Bridge.webp" alt = "Golden Gate Bridge painting" width="1080"><br><br><br><br>
-                    I had first pursued a career in Culinary Arts for a year, after which I had prompted dropped to become a Java, C++, and HTML wizard(and Matlab)! <br>
-                    All of my skills were founded and nourished at the prestigious San Francisco State University in California. <br>
+                    <h2>I had first pursued a career in Culinary Arts for a year, after which I had prompted dropped to become a Java, C++, and HTML wizard(and Matlab)! </h2><br>
+                    <h2>All of my skills were founded and nourished at the prestigious San Francisco State University in California. </h2><br>
                     <img src="images/SFSU.jpg" alt= "SFSU">
                     <img src="images/Glass.jpg" alt="Posh Building SFSU">
-                    </p>
-                </article>
+                    
         </section>
 
         <section> 
-            <header id = "Education">
-                <h1>Education</h1>
+            <header style = "font-size: 40px" id = "Education">
+                Education
             </header>
             <table style="color: rgba(0, 8, 255, 0.605);"> 
                 <thead><tr>
-                    <th><h2>Institution</h2></th>
-                    <th><h2>Years</h2></th>
+                    <th style="font-size: 25px">Institution</th>
+                    <th style="font-size: 25px">Years</th>
                 </tr></thead>
 
                 <tr>
@@ -57,28 +55,40 @@
                 </tr>
             </table>
 
-        <header> <h1>Courses</h1> </header>
-            <ul>
-                <h2>CSC 101 Introduction to Computing</h2>
-                <h2>CSC 215 Intermediate Computer Programming </h2>
-                <h2>CSC 220 Data Structures</h2>
-                <h2>CSC 230 Discrete Mathematical Structures for Computer Science</h2>
-                <h2>CSC 300GW Ethics, Communication, and Tools for Software Development - GWAR</h2>
-                <h2>Calculus 1</h2>
-                <h2>Calculus 2</h2>
-                <h2>MATH 425 Applied and Computational Linear Algebra</h2>
-             </ul>  
+        <header style = "font-size: 40px"> Courses </header>
+            <ol>
+                <li><a href ="https://bulletin.sfsu.edu/courses/csc/"><h2>CSC 101 Introduction to Computing</h2></a></li>
+                <li><a href ="https://bulletin.sfsu.edu/courses/csc/"><h2>CSC 215 Intermediate Computer Programming</h2></a></li>
+                <li><a href ="https://bulletin.sfsu.edu/courses/csc/"><h2>CSC 220 Data Structures</h2></a></li>
+                <li><a href ="https://bulletin.sfsu.edu/courses/csc/"><h2>CSC 230 Discrete Mathematical Structures for Computer Science</h2></a></li>
+                <li><a href ="https://bulletin.sfsu.edu/courses/csc/"><h2>CSC 300GW Ethics, Communication, and Tools for Software Development - GWAR</h2></a></li>
+                <li><a href ="https://www.ccsf.edu/node/162671"><h2>Calculus 1</h2></a></li>
+                <li><a href ="https://www.ccsf.edu/node/162676"><h2>Calculus 2</h2></a></li>
+                <li><a href ="https://math.sfsu.edu/courses/425"><h2>MATH 425 Applied and Computational Linear Algebra</h2></a></li>
+             </ol>  
         </section>
 
-        <header> <h1>Work Experience</h1> </header>
+        <header style = "font-size: 40px" id = "Skills"> Skills </header>
+        <ul>
+            <li><a href = "images/Brothers_In_Arms.png"><h2>Worked with Elon Musk to bring Tesla to where it is today</h2></a></li>
+            <li><h2>Java</h2></li>
+            <li><h2>C++</h2></li>
+            <li><h2>HTML</h2></li>
+            <li><h2>Matlab</h2></li>
+        </ul>
+
         
         <div id = "Contact">
         <form>
-            
-            <label>Name</label>
-            <input type="text" name="Hello">
+            <h3>Send me a message!</h3>
+            <input type="text" placeholder="Input your name here" >
+            <input type="text" placeholder="Input your email here" ><br>
+            <input type="text" placeholder="Input subject title here" size="46"><br>
+            <textarea name="A message" rows="20" cols="46" placeholder="Leave a message!"></textarea><br>
+            <input type="submit">
             </form>
             </div>
+
         <a href="#Name"> Return to top </a>
         </body>
            
