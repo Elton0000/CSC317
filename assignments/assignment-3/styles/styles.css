@@ -1,6 +1,225 @@
+:root {
+--redish: rgb(189, 79, 79);
+--font:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'Arial', 'sans-serif';
+--strongFont: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+--titleFontSize: 70px;
+--articleTitleFontSize: 50px;
+--subsectionTitleFontSize: 35px;
+--paragraphFontSize: 28px;
+
+ 
+
+}
+h1 {
+    font-size:var(--titleFontSize);
+    font-family:var(--strongFont);
+}
+
+h2 {
+    font-size:var(--articleTitleFontSize);
+}
+
+h3 {
+    font-size:var(--subsectionTitleFontSize);
+}
+
+p {
+    font-size:var(--paragraphFontSize);
+}
+
+body {
+    background-color: rgb(105, 249, 9);
+}
+
+.Name {
+color:rgb(226, 63, 22);
+text-align: center;
+margin: 0px auto;
+margin-top: 20px;
+margin-bottom: -31px;
+inline-size: 15%;
+border: solid yellow;
+border-style:hidden;
+}
+
+.Name:hover {
+color:rgb(237, 249, 7);
+}
+
+#Me{
+    border-radius: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15%;
+    border: solid yellow;   
+}
+
+#containerOfMe{
+    background-color:var(--redish);
+    margin: -10px -40px;
+    padding: 50px;
+}
+
+nav > ul {
+    list-style-type: none;
+    background-color: rgb(63, 173, 160);
+    font-size:var(--titleFont);
+    display:flex;
+    column-gap: 15%;
+    
+    margin-left: -20px;
+    margin-right: -40px;
+    border-style: dashed;
+    border-color: azure;
+    border:20px dashed azure;
+    
+}
+
+nav > ul > li {
+    margin-left: 5px;
+    font-size: 35px;
+    border: 5px solid black;
+    border-radius: 20px;
+    background-color: aqua;
+    
+}
+nav > ul > li:hover {
+    transform: scale(1.1);
+    
+}
+nav > ul > li:active {
+    background-color: rgb(56, 5, 223);
+    
+}
+nav > ul > li > a {
+    display: inline-block;
+    padding: 20px 20px;
+    text-decoration: none;
+}
+nav > ul > li > a:hover{
+    transform: scale(1.1)
+}
+
+nav > ul > li::selection {
+    color:purple;
+}
+
+li {
+    font-size:var(--paragraphFontSize) ;
+}
+
 #Bio {
-    font-size : 25px;
-    font:bold;
-    text-align : right;
-    color : red;
+text-align: center;
+}
+
+#theBridge{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#aboutTextContainer {
+    text-align: center;
+    background-color: bisque;
+    border-color: rgb(235, 132, 7);
+    border-style: groove;
+    margin: 0px 30%;
+    margin-top:-17px;
+    
+}
+#aboutTextContainer:hover {
+color:rgb(0, 32, 237);
+font-family:var(--strongFont);
+transform: scale(1.1)
+}
+
+#schoolContainer {
+    display:flex;
+    margin-right: -20px
+}
+
+.mapInteractable{
+background-image: url(../images/SFSU.jpg); /*https://stackoverflow.com/questions/4862231/links-not-going-back-a-directory  helped me with this*/
+text-indent: 100%;
+
+white-space: nowrap;
+overflow: hidden;
+margin-left: -20px;
+}
+
+#embeddedMap {
+    margin-right: -20px;
+    width: 80%;
+}
+
+.mapInteractable:hover {
+    color:brown;
+}
+
+#Education {
+    text-align: center;
+}
+
+table {
+display:grid;
+place-items:center;
+}
+
+table > thead > tr {
+    display:flex;
+    column-gap: 40px;
+    font-size:var(--subsectionTitleFontSize);
+}
+
+td {
+    
+    font-size:var(--paragraphFontSize);
+}
+
+#Courses {
+text-align: center;
+
+}
+#Courses > ol {
+    
+    list-style: none;
+    padding-block: 1px;
+}
+#Courses > ol > li {
+    
+    background-color: blanchedalmond;
+    border: 1px solid rgb(40, 8, 165);
+}
+
+#Courses > ol > li > a{
+    display: inline-block;
+    padding: 20px 1000px;
+    text-decoration: none;
+}
+#Courses > ol > li > a:hover {
+    transform: scale(1.2);
+}
+#Course > a:active {
+    background-color: red;
+}
+#Extracurricular {
+    text-align: right;
+    margin-top: -300px;
+}
+.toStretch {
+    width: 700px;  
+}
+#Contact {
+    margin-top: -1200px
+}
+footer {
+    font-size:var(--articleTitleFontSize);
+}
+#Return {
+    margin-left:700px;
+    font-size: 30px;
+    border: 10px groove lightblue;
+    background-color: aliceblue;
+    
 }

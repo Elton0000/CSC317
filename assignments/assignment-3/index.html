@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset = "UTF-8">
+     <meta name = "viewport" content = "width = device-width,initial-scale = 1.0">
+     <meta name = "description" content = "My first time making an HTML webpage">
+     <meta name = "keywords" content = "HTML, first webpage, intro">
+     <meta name = "author" content = "Elton Nhan">
+     <link rel = "icon" href = "images/favicon.ico">
+     <link rel = "stylesheet" href = "styles/styles.css">
+        <Title>
+        Elton Nhan Portfolio
+        </Title>
+    </head>
+
+    <body>
+        <div id ="containerOfMe">
+        <img src="images/IMG_2136.JPG" alt="A picture of me!" width="244" id = "Me">
+            </div>
+            
+
+        <header class = "Name"> <h1>Elton Nhan </h1></header>
+        <nav>
+         <ul>  
+            <li><a href="#Education">Education</a></li>
+            <li><a href="#Courses">Courses</a></li>
+            <li><a href="#Skills">Skills</a></li>
+            <li><a href="#Extracurricular"> Extracurriculars</a></li>
+            <li><a href="#Contact"> Contact </a></li>
+            </ul>
+                </nav>       
+            
+                    <header id = "Bio"> <h2>About Me</h2> </header>
+        <main>   
+            <img src="images/Bridge.webp" alt = "Golden Gate Bridge painting" width="1080" id = "theBridge"><br>
+            <div id = "aboutTextContainer">  
+                <p>My name is Elton Nhan and I was born in San Francisco, California February 2nd, 2001.<br>
+                        I had first pursued a career in Culinary Arts for a year, after which I had prompted dropped to become a Java, C++, and HTML wizard(and Matlab)!<br>
+                        All of my skills were founded and nourished at the prestigious San Francisco State University in California.
+                </p><br>
+                    </div>
+            <div id = "schoolContainer">
+            <a class = "mapInteractable" href="https://www.openstreetmap.org/?#map=19/37.723954/-122.477254">Click__________________________________________________On__________________________________________________Me</a></small>
+            <iframe  id ="embeddedMap" alt = "Location of SFSU Campus" width="576px" height="576px" src="https://www.openstreetmap.org/export/embed.html?bbox=-122.47988283634187%2C37.72265538087446%2C-122.47462570667268%2C37.72525214701829&amp;layer=mapnik" style="border: 1px solid black"></iframe><small>
+                </div>
+        </main>
+
+        <section> 
+            <header id = "Education"><h2>Education</h2></header> 
+            <table> 
+                <thead><tr>
+                    <th>Institution</th>
+                    <th>Years</th>
+                </tr></thead>
+
+                <tr>
+                    <td>City College of San Francisco</td>
+                    <td>2019 - 2022</td>
+                </tr>
+
+                <tr> 
+                    <td>San Francisco State University</td>
+                    <td>2023 - Current</td>
+                </tr>
+            </table>
+            </section>
+
+            <section id = "Courses">
+        <header><h2>Courses</h2></header>
+            <ol>
+                <li><a href ="https://bulletin.sfsu.edu/courses/csc/">CSC 101 Introduction to Computing</a></li>
+                <li><a href ="https://bulletin.sfsu.edu/courses/csc/">CSC 215 Intermediate Computer Programming</a></li>
+                <li><a href ="https://bulletin.sfsu.edu/courses/csc/">CSC 220 Data Structures</a></li>
+                <li><a href ="https://bulletin.sfsu.edu/courses/csc/">CSC 230 Discrete Mathematical Structures for Computer Science</a></li>
+                <li><a href ="https://bulletin.sfsu.edu/courses/csc/">CSC 300GW Ethics, Communication, and Tools for Software Development - GWAR</a></li>
+                <li><a href ="https://www.ccsf.edu/node/162671">Calculus 1</a></li>
+                <li><a href ="https://www.ccsf.edu/node/162676">Calculus 2</a></li>
+                <li><a href ="https://math.sfsu.edu/courses/425">MATH 425 Applied and Computational Linear Algebra</a></li>
+             </ol>  
+        </section>
+
+        <section id = "Skills">
+        <header><h2>Skills</h2></header>
+        <ul>
+            <li><a href = "images/Brothers_In_Arms.png">Worked with Elon Musk to bring Tesla to where it is today</a></li>
+            <li>Java</li>
+            <li>C++</li>
+            <li>HTML</li>
+            <li>Matlab</li>
+        </ul>
+        </section>
+        
+        <section id ="Extracurricular">
+            <header><h2>Extracurriculars</h2></header>
+            
+            <article>
+                <header><h3>Current Involvement</h3></header>
+                <p>
+                    Currently, I am a learning assistant for one of Duc Ta's CSC 220 classes.<br>
+                    <img src = "images/tutoring.webp" alt = "Sample Tutoring image" class = "toStretch">
+                </p>
+                </article>
+
+                <article>
+                    <header><h3>Hobbies</h3></header>
+                    <p>
+                         In my pastime, I frequently enjoying playing some basketball as well as reading up a lot on optimization problems!
+                        </p><br>
+                        <img src = "images/optimize.jpg" alt = "Cogs representing optimization" class = "toStretch">
+                        <img src = "images/bball.PNG" alt = "My hobby, basketball" class = "toStretch">
+                </article>
+            </section>
+
+            <form id = "Contact">
+                <footer><h2>Send me a message!</h2></footer>
+                <input type="text" placeholder="Input your name here" >
+                <input type="text" placeholder="Input your email here" ><br>
+                <input type="text" placeholder="Input subject title here" size="46"><br>
+                <textarea name="A message" rows="65" cols="46" placeholder="Leave a message!"></textarea><br>
+                <input type="submit">
+            </form>
+        
+        <a href="#containerOfMe" id = "Return"> Return to top </a>
+        </body>
+           
+    </html>
