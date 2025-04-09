@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <Title>Calculator App</Title>
+    <meta charset = "UTC-8">
+    <link rel="stylesheet" href="style.css">
+        </head>
+    <body>
+        <main>
+    
+            <p id = "operationDisplay">Display Live Operations Here</p>
+            <p id = resultDisplay>Display Result Here</p>
+
+        <div id = "row1">
+            <p id = "AC" class = "oneButtonFunction">Clear All Function</p>
+            <p id = "+-" class = "oneButtonFunction">Negates the Current Value</p>
+            <p id = "%" class = "oneButtonFunction">Divides Current Value by 100</p>
+            <p id = "divide" class = "operators">division operator</p>
+        </div>
+
+        <div id = "row2">
+            <p id = "seven" class = "input">7</p>
+            <p id = "eight" class = "input">8</p>
+            <p id = "nine" class = "input">9</p>
+            <p id = "multiply" class = "operators">multiplication operator</p>
+        </div>
+
+        <div id = "row3">
+            <p id = "four" class = "input">4</p>
+            <p id = "five" class = "input">5</p>
+            <p id = "six" class = "input">6</p>
+            <p id = "subtract" class = "operators">subtraction operator</p>
+        </div> 
+
+        <div id = "row4">
+            <p id = "one" class = "input">1</p>
+            <p id = "two" class = "input">2</p>
+            <p id = "three" class = "input">3</p>
+            <p id = "addition" class = "operators">addition operator</p>
+        </div>
+
+        <div id = "row5">
+            <p id = "deadButton">space</p>  
+            <p id = "zero" class = "input">0</p>
+            <p id = "decimal" class = "input">.</p> 
+            <p id = "equals" class = "operators">applies the last operation done on current value</p>
+            <!--
+            Returns the value of an operation done on input 2 by input 1.
+            
+            On my phone, it seems to record the last operation and numeric input, then apply it on the current value.
+            2 x 2 = 4, but if you input an 8 followed by =operator, you get 8 x 2 = 16
+            Pressing =operator when only a single input is fed does nothing to the current state of the program
+            -->
+        </div>
+
+        </main>
+        </body>  
+</html>

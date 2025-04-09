@@ -1,0 +1,26 @@
+:root {
+    
+}
+body {
+    background-color: gold;
+}
+main {
+    display: grid;
+    grid-template-areas: 
+    "auto auto operationDisplay operationDisplay"
+    "auto auto resultDisplay resultDisplay"
+    "row1 row1 row1 row1" 
+    "row2 auto auto auto"
+    "row3 auto auto auto"
+    "row4 auto auto auto"
+    "row5 auto auto auto";
+    border-style: dashed;
+    border-width: 20px;
+    border-color:rgb(209, 253, 12);
+}
+main > p {
+    padding: 1% 1%;
+}
+.input {
+    background-color: aqua;
+}
