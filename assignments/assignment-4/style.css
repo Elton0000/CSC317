@@ -1,26 +1,37 @@
 :root {
     
 }
+#operationDisplay {
+text-align: right;
+}
+#resultDisplay {
+text-align: right;
+}
 body {
     background-color: gold;
+    font-size: 32px;
 }
 main {
-    display: grid;
-    grid-template-areas: 
-    "auto auto operationDisplay operationDisplay"
-    "auto auto resultDisplay resultDisplay"
-    "row1 row1 row1 row1" 
-    "row2 auto auto auto"
-    "row3 auto auto auto"
-    "row4 auto auto auto"
-    "row5 auto auto auto";
     border-style: dashed;
     border-width: 20px;
-    border-color:rgb(209, 253, 12);
+    border-color:rgb(209, 253, 12);  
 }
-main > p {
-    padding: 1% 1%;
+main > div{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    text-align: center;
+
+}
+main > div > p {
+    border-radius: 100px;
+    border-color: azure;
+    border-width: 10px;
+    border-style:solid;
+    inline-size: 20%;
+    padding: 20px 20px 20px 20px;
+
+
 }
 .input {
-    background-color: aqua;
+    background-color: rgb(214, 224, 224);
 }
