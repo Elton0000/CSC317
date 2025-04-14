@@ -11,8 +11,9 @@ function AC() {
     document.getElementById("resultDisplay").innerHTML = 0;
 }
 function addDecimal() {
-    document.getElementById("resultDisplay").innerHTML += ".";
-}
+    if (!document.getElementById("resultDisplay").innerHTML.includes(".")) {
+        document.getElementById("resultDisplay").innerHTML += "."; 
+     }}
 function negate() {
     document.getElementById("resultDisplay").innerHTML *= -1;
 }
@@ -25,16 +26,19 @@ function divide() {
     }
 }
 function multiply() {
-    document.getElementById("resultDisplay").innerHTML += "x";
-}
+    if (!document.getElementById("resultDisplay").innerHTML.includes("x")) {
+        document.getElementById("resultDisplay").innerHTML += "x"; 
+     }}
 function subtract() {
-    document.getElementById("resultDisplay").innerHTML += "-";
-}
+    if (!document.getElementById("resultDisplay").innerHTML.includes("-")) {
+        document.getElementById("resultDisplay").innerHTML += " - "; 
+     }}
 function add() {
-    document.getElementById("resultDisplay").innerHTML += "+";
-}
+    if (!document.getElementById("resultDisplay").innerHTML.includes("+")) {
+        document.getElementById("resultDisplay").innerHTML += " + "; 
+     }}
 function equals() {
     let calculation = document.getElementById("resultDisplay").innerHTML;
     document.getElementById("resultDisplay").innerHTML = eval(calculation);
 }
-console.log(document.getElementById("resultDisplay"));
+
