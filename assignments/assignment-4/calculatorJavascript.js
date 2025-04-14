@@ -34,8 +34,7 @@ function add() {
     document.getElementById("resultDisplay").innerHTML += "+";
 }
 function equals() {
-    let calculation = document.getElementById("resultDisplay");
+    let calculation = document.getElementById("resultDisplay").innerHTML;
     document.getElementById("resultDisplay").innerHTML = eval(calculation);
 }
-
-
+console.log(document.getElementById("resultDisplay"));
