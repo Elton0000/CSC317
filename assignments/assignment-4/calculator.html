@@ -1,49 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang = "en">
     <head>
+    
     <Title>Calculator App</Title>
-    <meta charset = "UTC-8">
+    <meta charset = "UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <meta name = "description" content = "A calculator app">
+    <meta name = "keywords" content = "HTML, calculator, javascript, computing">
+    <meta name = "author" content = "Elton Nhan">
+    <script src = "calculatorJavascript.js">
+   
+    </script> 
     <link rel="stylesheet" href="style.css">
         </head>
+        
     <body>
         <main>
-            
-            <p id = "operationDisplay">Display Live Operations Here</p>
-            <p id = resultDisplay>Display Result Here</p>
+            <p id = "operationDisplay">a</p>
+            <p id = "resultDisplay">0</p>
             
         <div id = "row1">
-            <p id = "AC" class = "oneButtonFunction">AC</p>
-            <p id = "+-" class = "oneButtonFunction">+/-</p>
-            <p id = "%" class = "oneButtonFunction">%</p>
-            <p id = "divide" class = "operators">/</p>
+            <input id = "AC" class = "oneButtonFunction" type = "button" value = "AC" onclick = "hello()">
+            <input id = "+-" class = "oneButtonFunction" type = "button" value = "+/-">
+            <input id = "%" class = "oneButtonFunction" type = "button" value = "%">
+            <input id = "divide" class = "operators" type = "button" value = "/">
         </div>
 
         <div id = "row2">
-            <p id = "seven" class = "input">7</p>
-            <p id = "eight" class = "input">8</p>
-            <p id = "nine" class = "input">9</p>
-            <p id = "multiply" class = "operators">x</p>
+            <input id = "seven" class = "Input" type = "button" value = "7">
+            <input id = "eight" class = "Input" type = "button" value = "8">
+            <input id = "nine" class = "Input" type = "button" value = "9">
+            <input id = "multiply" class = "operators" type = "button" value = "x">
         </div>
 
         <div id = "row3">
-            <p id = "four" class = "input">4</p>
-            <p id = "five" class = "input">5</p>
-            <p id = "six" class = "input">6</p>
-            <p id = "subtract" class = "operators">-</p>
+            <input id = "four" class = "Input" type = "button" value = "4">
+            <input id = "five" class = "Input" type = "button" value = "5">
+            <input id = "six" class = "Input" type = "button" value = "6">
+            <input id = "subtract" class = "operators" type = "button" value = "-">
         </div> 
 
         <div id = "row4">
-            <p id = "one" class = "input">1</p>
-            <p id = "two" class = "input">2</p>
-            <p id = "three" class = "input">3</p>
-            <p id = "addition" class = "operators">+</p>
+            <input id = "one" class = "Input" type = "button" value = "1">
+            <input id = "two" class = "Input" type = "button" value = "2">
+            <input id = "three" class = "Input" type = "button" value = "3">
+            <input id = "addition" class = "operators" type = "button" value = "+">
         </div>
 
         <div id = "row5">
-            <p id = "deadButton" class = "input">space</p>  
-            <p id = "zero" class = "input">0</p>
-            <p id = "decimal" class = "input">.</p> 
-            <p id = "equals" class = "operators">=</p>
+            <input id = "deadButton" class = "Input" type = "button" value = "_">  
+            <input id = "zero" class = "Input" type = "button" value = "0">
+            <input id = "decimal" class = "Input" type = "button" value = "."> 
+            <input id = "equals" class = "operators" type = "button" value = "=">
             <!--
             Returns the value of an operation done on input 2 by input 1.
             
@@ -52,13 +60,8 @@
             Pressing =operator when only a single input is fed does nothing to the current state of the program
             -->
         </div>
-
         </main>
-        <script src="hello.js"></script>
-        <script>
-            document.getElementById("equals").addEventListener("click", function() {
-                document.getElementById("resultDisplay").textContent = createMessage("0");
-            });
-        </script>
+
         </body>  
+        
 </html>
