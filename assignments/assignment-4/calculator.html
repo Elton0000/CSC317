@@ -15,6 +15,7 @@
         </head>
         
     <body>
+        <p id = "valueOfResetCounter" style = "font-size: 50px">0</p>
         <main>
             <p id = "operationDisplay">a</p>
             <p id = "resultDisplay" value = "0">0</p>
@@ -23,28 +24,28 @@
             <input id = "AC" class = "oneButtonFunction" type = "button" value = "AC" onclick = "AC()">
             <input id = "+-" class = "oneButtonFunction" type = "button" value = "+/-" onclick = "negate()">
             <input id = "%" class = "oneButtonFunction" type = "button" value = "%" onclick = "percentage()">
-            <input id = "divide" class = "operators" type = "button" value = "÷" onclick = "divide()">
+            <input id = "divide" class = "operators" type = "button" value = "÷" onclick = "operator('/')">
         </div>
 
         <div id = "row2">
             <input id = "seven" class = "Input" type = "button" value = "7" onclick = "inputNum(7)">
             <input id = "eight" class = "Input" type = "button" value = "8" onclick = "inputNum(8)">
             <input id = "nine" class = "Input" type = "button" value = "9" onclick = "inputNum(9)">
-            <input id = "multiply" class = "operators" type = "button" value = "POP" onclick = "multiply()">
+            <input id = "multiply" class = "operators" type = "button" value = "x" onclick = "operator('*')">
         </div>
 
         <div id = "row3">
             <input id = "four" class = "Input" type = "button" value = "4" onclick = "inputNum(4)">
             <input id = "five" class = "Input" type = "button" value = "5" onclick = "inputNum(5)">
             <input id = "six" class = "Input" type = "button" value = "6" onclick = "inputNum(6)">
-            <input id = "subtract" class = "operators" type = "button" value = "-" onclick = "subtract()">
+            <input id = "subtract" class = "operators" type = "button" value = "-" onclick = "operator('-')">
         </div> 
 
         <div id = "row4">
             <input id = "one" class = "Input" type = "button" value = "1" onclick = "inputNum(1)">
             <input id = "two" class = "Input" type = "button" value = "2" onclick = "inputNum(2)">
             <input id = "three" class = "Input" type = "button" value = "3" onclick = "inputNum(3)">
-            <input id = "addition" class = "operators" type = "button" value = "+" onclick = "add()">
+            <input id = "addition" class = "operators" type = "button" value = "+" onclick = "operator('+')">
         </div>
 
         <div id = "row5">
