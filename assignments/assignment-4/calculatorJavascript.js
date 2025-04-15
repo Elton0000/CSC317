@@ -7,10 +7,10 @@ function inputNum(x) {
         document.getElementById("resultDisplay").innerHTML = x;
         memoryX = x;
     }
-    else if (resetCounter != 0 && memoryX != 0) { //Allowing calculations to be made a stored value after = operator is used
+    else if (resetCounter != 0 && memoryX.includes("*")) { //Allowing calculations to be made a stored value after = operator is used
         document.getElementById("resultDisplay").innerHTML += x;
         memoryX += x.toString();
-        resetCounter--;
+        resetCounter = 0;
     }
     else if (resetCounter != 0) { //I wanted to have a way to overwrite the displayed value if = operator was used. Doesn't require AC.
         document.getElementById("resultDisplay").innerHTML = x;
