@@ -1,0 +1,120 @@
+/* Yggdrasil Themed Stylesheet - Inspired by RuneScape Launcher */
+
+/* General Page Styling */
+body {
+    background: url('images/yggdrasil_bg.jpg') no-repeat center center fixed; /* Sets a background image based on Yggdrasil */
+    background-size: cover; /* Ensures the background covers the entire page */
+    color: #d1e7dd; /* Light greenish-blue text for a mystical feel */
+    font-family: 'Verdana', sans-serif; /* Sets the font style */
+    text-align: center; /* Centers text alignment */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Profile Image Styling */
+#containerOfMe img {
+    display: block;
+    margin: 20px auto;
+    border-radius: 50%; /* Makes the profile image circular */
+    width: 150px; /* Sets a reasonable size */
+    border: 3px solid #5a3e1b; /* Adds an earthy brown border */
+    box-shadow: 0 0 10px #5a3e1b; /* Creates a subtle glowing effect */
+}
+
+/* Name Header Styling */
+.Name {
+    font-size: 2em;
+    font-weight: bold;
+    color: #f5e8c7; /* Golden-white text for contrast */
+    text-shadow: 2px 2px 8px #5a3e1b; /* Adds a glowing effect */
+}
+
+/* Navigation Bar Styling */
+nav {
+    background: rgba(90, 62, 27, 0.8); /* Semi-transparent earthy background */
+    padding: 10px; /* Adds padding for spacing */
+    width: 80%; /* Limits the width for a structured layout */
+    border-radius: 10px; /* Rounds the edges */
+}
+nav ul {
+    list-style: none; /* Removes default list styling */
+    display: flex;
+    justify-content: space-around; /* Evenly distributes navigation links */
+    padding: 0;
+}
+nav ul li a {
+    color: #f5e8c7; /* Sets the text color */
+    text-decoration: none; /* Removes underline */
+    font-size: 1.2em; /* Adjusts text size */
+    transition: color 0.3s; /* Smooth color transition */
+}
+nav ul li a:hover {
+    color: #d4af37; /* Changes color on hover for a gold highlight effect */
+}
+
+/* About Me Section */
+#Bio {
+    font-size: 1.5em;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent dark background */
+    padding: 15px; /* Adds spacing */
+    border-radius: 10px; /* Rounds the corners */
+    width: 80%; /* Limits width for better readability */
+}
+
+/* School and Map Section */
+#schoolContainer {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Adds space between the elements */
+    margin-top: 20px; /* Provides spacing from previous section */
+}
+
+/* Education Table Styling */
+table {
+    border-collapse: collapse; /* Removes default table spacing */
+    width: 80%; /* Limits table width */
+    background: rgba(90, 62, 27, 0.8); /* Dark earthy background */
+    color: #f5e8c7; /* Light text for contrast */
+    box-shadow: 0 0 10px #5a3e1b; /* Adds a glowing effect */
+}
+th, td {
+    border: 1px solid #d4af37; /* Gold borders for a regal touch */
+    padding: 10px; /* Adds spacing for better readability */
+    text-align: center; /* Centers text within table cells */
+}
+
+/* Skills, Extracurriculars, and Hobbies Row */
+#Skills, #Extracurricular, #Hobbies {
+    display: inline-block;
+    width: 30%; /* Distributes sections evenly */
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 15px; /* Adds padding for readability */
+    border-radius: 10px; /* Rounds edges */
+    box-shadow: 0 0 10px #5a3e1b; /* Adds a subtle glowing effect */
+}
+
+/* Contact Form Styling */
+#Contact {
+    margin: 20px auto; /* Centers the form with margin */
+    text-align: center; /* Aligns form content to center */
+    width: 50%; /* Restricts form width */
+    background: rgba(90, 62, 27, 0.8); /* Dark earthy background */
+    padding: 15px; /* Adds padding */
+    border-radius: 10px; /* Rounds the form corners */
+}
+
+/* Return to Top Button Styling */
+#Return {
+    margin-left: 10px; /* Adds spacing from other elements */
+    padding: 10px; /* Provides padding for button size */
+    background: #d4af37; /* Sets a golden background */
+    color: #5a3e1b; /* Dark text for contrast */
+    text-decoration: none; /* Removes underline */
+    border-radius: 5px; /* Rounds button edges */
+    box-shadow: 0px 0px 10px #f5e8c7; /* Adds glowing effect */
+}
+#Return:hover {
+    background: #f5e8c7; /* Changes background on hover */
+    color: #5a3e1b; /* Adjusts text color on hover */
+}

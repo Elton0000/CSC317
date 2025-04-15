@@ -73,3 +73,8 @@ main > div > input:active {
 .oneButtonFunction {
     background-color: rgba(201, 196, 196, 0.35)
 }
+
+a {
+    font-size: 32px;
+    color:white;
+}

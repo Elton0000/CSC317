@@ -1,0 +1,3 @@
+Given my html file, and this additional image of Yggdrasil, I would like you format another .css file for me. Use the Runescape Jagex launcher as a reference for how the content should be laid out, but do be sure to include everything in the .html file. Also, I would like the theme of the page to be based on the yggdrasil image.
+
+could you add comments to the css file telling me what everything does as well?
