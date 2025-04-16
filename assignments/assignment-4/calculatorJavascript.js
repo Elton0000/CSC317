@@ -2,6 +2,7 @@ let memoryX = 0;
 let xLength;
 let lastInput;
 let resetCounter = 0;
+let operatorRegex = /\/|\*|\-|\+/;
 const safePattern = /^[0-9+\-*/%.() ]+$/;
 function inputNum(x) {
     if (memoryX == 0 || memoryX == "Undefined" ) { //If it's the first time inputting number, set global x to = input
@@ -53,21 +54,24 @@ function percentage() {
 }
 
 function operator(operator) { //Includes *, /, +, - but not = and % since I their functions were more unique on IOS calculator
-if (memoryX.toString().charAt(xLength - 2) != lastInput) {
+    let insertedSymbol = operator;
     if (operator == "*") {
-        updateDisplay("x");
+        insertedSymbol = "x";
     }
     else if (operator == "/") {
-        updateDisplay("÷");
+        insertedSymbol = "÷";
     }
-    else {
-        updateDisplay(operator);
-    }
+if (!operatorRegex.test(lastInput)) {
+    updateDisplay(insertedSymbol);
     memoryX += (" " + operator + " ");
+ }
+ else {
+
  }
  if (resetCounter > 0) {
     resetCounter = 0;
  }
+ 
  displayX(operator);
 }
 
@@ -109,4 +113,9 @@ function secureEval(expression) {
       throw new Error("Error evaluating expression.");
     }
   }
+
+  let z = "OP";
+  z = z.substring(0,0) + "eggers";
+  x = z.slice(0,3)
+  console.log(x);
 
