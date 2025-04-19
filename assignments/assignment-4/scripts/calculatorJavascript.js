@@ -245,7 +245,12 @@ function secureEval(expression) { //borrowed functions
     } else if (key === "Backspace") {
   
        // todo
-       memoryX = memoryX.slice(0,memoryXLength - 1);
+       if (memoryXLength <= 1) {
+        memoryX = 0;
+       }
+       else {
+        memoryX = memoryX.slice(0,memoryXLength - 1);
+       }
        document.getElementById("resultDisplay").innerHTML = memoryX;
        displayX("Backspace");
     }
