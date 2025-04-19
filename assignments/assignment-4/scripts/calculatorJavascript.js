@@ -9,7 +9,8 @@ let lastTwoInputs = 0; // operator then integer
 
 let status = "not negated";
 let resetCounter = 0;
-let operatorRegex = /\/|\*|\-|\+/;
+const operatorRegex = /\/|\*|\-|\+/;
+const numeralRegex = /1|2|3|4|5|6|7|8|9|0/;
 const safePattern = /^[0-9+\-*/%.() ]+$/;
 
 function inputNum(x) {
@@ -42,10 +43,13 @@ function AC() {
     document.getElementById("resultDisplay").innerHTML = 0;
     document.getElementById("operationDisplay").innerHTML = "";
     memoryX = 0;
+    lastInput = ""
     lastTwoInputs = 0;
     lastNumeral = "";
+    cosmeticXLength = 0;
     resetCounter = 0;
     displayX("AC");
+
 }
 
 function addDecimal() {
@@ -86,16 +90,21 @@ function percentage() {
 
 function operator(operator) { //Includes *, /, +, - but not = and % since I their functions were more unique on IOS calculator
     let insertedSymbol = operator; //comestic, does not affect functionality
-    if (operator == "*") {
+        if (operator == "*") {
         insertedSymbol = "x";
     }
     else if (operator == "/") {
         insertedSymbol = "÷";
     }
-
+    
     if (memoryX == 0 && operator == "-") {
         memoryX = "-";
         mendDisplay("-");
+    }
+    else if (lastInput == "-" && memoryX == "-") {
+        if (operator != "-") {
+            AC();
+        }
     }
     else if (operatorRegex.test(lastInput) && lastInput != "*-1") { //cannot enter same 2 operators in a row
         memoryX = memoryX.toString().slice(0,memoryXLength - 1) + operator;
@@ -112,7 +121,6 @@ function operator(operator) { //Includes *, /, +, - but not = and % since I thei
     displayX(operator);
     
 }
-
 
 function equals() {
     if (!memoryX.toString().includes("/0")) { //as long as no division by 0, expression can be evaluated
@@ -173,7 +181,7 @@ function mendDisplay(x) {
     document.getElementById("resultDisplay").innerHTML = (document.getElementById("resultDisplay").innerHTML.slice(0,cosmeticXLength - 1) + x);
 }
 
-function secureEval(expression) {
+function secureEval(expression) { //borrowed functions
     if (!safePattern.test(expression)) {
       throw new Error("Invalid characters in expression.");
     }
@@ -184,5 +192,72 @@ function secureEval(expression) {
     }
   }
 
+  function flashButton(id) {
+    const button = $(id);
+    if (!button) return;
+  
+    button.classList.add("pressed");
+    setTimeout(() => {
+      button.classList.remove("pressed");
+    }, 100);
+  }
+  console.log(/1|2|3|4/.test(4));
+  document.addEventListener("keydown", function(event) {
 
+    const key = event.key;
+  
+     //todo define keyMap
+     document.getElementById("value1").innerHTML = key;
+    // Perform calculator logic
+  
+    if ("0123456789+-*/.%".includes(key)) {
 
+      // todo
+      switch (key) {
+        case "0":
+        case "1":
+        case "2":
+        case "3":
+        case "4":
+        case "5":
+        case "6":
+        case "7":
+        case "8":
+        case "9": {inputNum(key); break;}
+        case "+":
+        case "-":
+        case "*":
+        case "/": {operator(key); break;}
+        case "%": {percentage(); break;}
+        case ".": {addDecimal(); break;}
+        default: ;
+      }
+    } else if (key === "Enter") {
+  
+      event.preventDefault(); // this prevents the form from being submitted
+  
+      // todo
+      equals();
+    } else if (key === "Escape") {
+  
+      // todo
+      AC();
+    } else if (key === "Backspace") {
+  
+       // todo
+       memoryX = memoryX.slice(0,memoryXLength - 1);
+       document.getElementById("resultDisplay").innerHTML = memoryX;
+       displayX("Backspace");
+    }
+  
+    // Apply visual feedback
+  
+    const btnId = keyMap[key]; // keyMap needs to be defined above
+  
+    if (btnId) {
+  
+      flashButton(btnId); // flashButton needs to be defined. I gave you this already.
+  
+    }
+  
+  });
