@@ -1,21 +1,24 @@
 let memoryX = 0;
 let memoryXLength;
 let cosmeticXLength;
-let lastInput;
-let lastTwoInputs; // operator then integer
+
+let lastInput; // just whatever was last inputted numeric/operator
 let lastOperator;
+let lastNumeral;
+let lastTwoInputs = 0; // operator then integer
+
 let status = "not negated";
-let lastRecord;
 let resetCounter = 0;
 let operatorRegex = /\/|\*|\-|\+/;
 const safePattern = /^[0-9+\-*/%.() ]+$/;
+
 function inputNum(x) {
-    if (memoryX == 0 || memoryX == "Undefined" ) { //If it's the first time inputting number, set global x to = input
+    
+    if (memoryX === 0 || memoryX == "Undefined" ) { //If it's the first time inputting number, set global x to = input
         document.getElementById("resultDisplay").innerHTML = x;
         memoryX = x;
-
     }
-    else if (resetCounter > 0) { //I wanted to have a way to overwrite the displayed value if = operator was used. Doesn't require AC.
+    else if (resetCounter > 0 && lastInput != ".") { //I wanted to have a way to overwrite the displayed value if = operator was used. Doesn't require AC.
         document.getElementById("resultDisplay").innerHTML = x;
         memoryX = x;
         resetCounter--;
@@ -37,21 +40,24 @@ function inputNum(x) {
 
 function AC() {
     document.getElementById("resultDisplay").innerHTML = 0;
+    document.getElementById("operationDisplay").innerHTML = "";
     memoryX = 0;
+    lastTwoInputs = 0;
+    lastNumeral = "";
     resetCounter = 0;
     displayX("AC");
 }
 
 function addDecimal() {
-    if (!document.getElementById("resultDisplay").innerHTML.includes(".")) {
+    if (lastInput == "=") { //Makes it so function does not append a decimal after equals button is pressed
+        memoryX = "0.";
+        document.getElementById("resultDisplay").innerHTML = memoryX;
+    }
+    else if (!/\./.test(lastNumeral)) { // allows for 2+ numeric values including decimals to be operated upon
         document.getElementById("resultDisplay").innerHTML += ".";
         memoryX += ".";
-        lastTwoInputs[1] += ".";
      }
-    //  else if () {
-
-    //  }
-     displayX(".");   
+     displayX(".");
 }
 
 function negate() { // should apply a status of being negated, this is removed on the next integer input
@@ -72,7 +78,7 @@ function percentage() {
         updateDisplay("%");
     }
     else {
-        mendDisplay("%")
+        mendDisplay("%");
     }
     memoryX += " /100 ";
     displayX("%");
@@ -100,7 +106,6 @@ function operator(operator) { //Includes *, /, +, - but not = and % since I thei
         memoryX += operator;
     }
             
-
     if (resetCounter > 0) {
         resetCounter = 0;
     }
@@ -108,14 +113,23 @@ function operator(operator) { //Includes *, /, +, - but not = and % since I thei
     
 }
 
+
 function equals() {
-    if (!memoryX.toString().includes("/0")) {
+    if (!memoryX.toString().includes("/0")) { //as long as no division by 0, expression can be evaluated
         if (resetCounter < 1) {
             getLastTwoInputs();
             memoryX = secureEval(memoryX);
         }
         else { //Enters here if repeatedly pushing enter button
-            document.getElementById("operationDisplay").innerHTML = (memoryX + lastTwoInputs);
+
+            let symbol = lastTwoInputs; //symbol is purely visual, does not deal with calculations
+            if (/\*/.test(symbol)) { //For visual clarity of users
+                symbol = symbol.replace("*","x");
+            }
+            else if (/\//.test(symbol)) {
+                symbol = symbol.replace("/","÷")
+            }
+            document.getElementById("operationDisplay").innerHTML = (memoryX + symbol); //affects purely the listing of operations done
             memoryX = secureEval(memoryX + lastTwoInputs);
         }   
     }
@@ -127,7 +141,7 @@ function equals() {
     if (resetCounter < 1 && memoryX != "Undefined") {
         resetCounter++;
     }
-    lastInput = "=";
+    displayX("=");
 }
 
 function displayX(x) {
@@ -143,12 +157,15 @@ function updateDisplay(x) {
 
 function updateLastInput(x) {
     lastInput = x;
+    lastNumeral += x;
+    getLastTwoInputs();
     if (operatorRegex.test(x)) {
         lastOperator = x;
+        lastNumeral = "";
     }
 }
 
-function getLastTwoInputs () {
+function getLastTwoInputs () { //records last operator + last numeric value
     lastTwoInputs = memoryX.slice(memoryX.toString().lastIndexOf(lastOperator),memoryXLength);
 }
 

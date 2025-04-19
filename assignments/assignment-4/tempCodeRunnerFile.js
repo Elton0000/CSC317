@@ -1,1 +1,0 @@
-const safePattern = /^[0-9+-*/%.() ]+$/;
