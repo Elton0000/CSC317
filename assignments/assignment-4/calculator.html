@@ -14,14 +14,14 @@
         </head>
         
     <body>
-        <p id = "value1" style = "font-size: 50px">0</p>
-        <p id = "value2" style = "font-size: 50px">0</p>
+        <p style="font-size:50px" id = "value1">0</p>
+        <p style="font-size:50px" id = "value2">0</p>
         <main>
             <p id = "operationDisplay"></p>
             <p id = "resultDisplay" value = "0">0</p>
             
         <div id = "row1">
-            <input id = "AC" class = "oneButtonFunction" type = "button" value = "AC" onclick = "AC()">
+            <input id = "AC" class = "oneButtonFunction" type = "button" value = "AC" onclick = "AC(this.value)">
             <input id = "+-" class = "oneButtonFunction" type = "button" value = "+/-" onclick = "negate()">
             <input id = "%" class = "oneButtonFunction" type = "button" value = "%" onclick = "percentage()">
             <input id = "divide" class = "operators" type = "button" value = "÷" onclick = "operator('/')">
@@ -38,18 +38,18 @@
             <input id = "four" class = "Input" type = "button" value = "4" onclick = "inputNum(4)">
             <input id = "five" class = "Input" type = "button" value = "5" onclick = "inputNum(5)">
             <input id = "six" class = "Input" type = "button" value = "6" onclick = "inputNum(6)">
-            <input id = "subtract" class = "operators" type = "button" value = "-" onclick = "operator('-')">
+            <input id = "subtract" class = "operators" type = "button" value = "-" onclick = "operator(this.value)">
         </div> 
 
         <div id = "row4">
             <input id = "one" class = "Input" type = "button" value = "1" onclick = "inputNum(1)">
             <input id = "two" class = "Input" type = "button" value = "2" onclick = "inputNum(2)">
             <input id = "three" class = "Input" type = "button" value = "3" onclick = "inputNum(3)">
-            <input id = "addition" class = "operators" type = "button" value = "+" onclick = "operator('+')">
+            <input id = "addition" class = "operators" type = "button" value = "+" onclick = "operator(this.value)">
         </div>
 
         <div id = "row5">
-            <input id = "deadButton" class = "Input" type = "button" value = "_" onclick = "hello(0)">  
+            <input id = "deadButton" class = "Input" type = "button" value = "M" onclick = "hello()">  
             <input id = "zero" class = "Input" type = "button" value = "0" onclick = "inputNum(0)">
             <input id = "decimal" class = "Input" type = "button" value = "." onclick = "addDecimal()"> 
             <input id = "equals" class = "operators" type = "button" value = "=" onclick = "equals()">

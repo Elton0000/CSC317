@@ -59,8 +59,10 @@ main > div > input:hover {
 
 main > div > input:active { 
     background-color:rgb(22, 99, 166);
-    }
-
+}
+#deadButton:active {
+    background-color:rgb(139, 90, 26); 
+}
 .Input {
     background-color: rgb(45, 45, 45);
 }
