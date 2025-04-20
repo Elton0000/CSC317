@@ -26,6 +26,7 @@ function hello() {
         document.getElementById("deadButton").value = "(M)";
         document.getElementById("addition").value = "M+";
         document.getElementById("subtract").value = "M-";
+        document.getElementById("+-").value = "MR"
         document.getElementById("AC").value = "MC";
         enabledM = true;
     }
@@ -69,19 +70,10 @@ function operator(operator) { //Includes *, /, +, - but not = and % since their 
     }
     
     if (operator == "M+") {
-        // memoryX = memoryValue.toString() + "+" + memoryX.toString();
         document.getElementById("resultDisplay").innerHTML = (memoryValue.toString() + "+" + memoryX.toString());
     }
     else if (operator == "M-") {
-        
-        if (/--/.test(memoryX)){
-            memoryX = memoryValue.toString() + "+" + memoryX.toString().slice(memoryX.toString().indexOf("-") + 2,memoryX.toString().length);
-            document.getElementById("value1").innerHTML = "Chinto";
-        }
-        else {
-            document.getElementById("resultDisplay").innerHTML = (memoryValue.toString() + "-" + memoryX.toString());
-            document.getElementById("value1").innerHTML = "Chico";
-        }
+        document.getElementById("resultDisplay").innerHTML = (memoryValue.toString() + "-" + memoryX.toString());
     }
     else if (memoryX == 0 && operator == "-") {
         memoryX = "-";
@@ -110,14 +102,10 @@ function operator(operator) { //Includes *, /, +, - but not = and % since their 
 function equals() {
     if (!memoryX.toString().includes("/0")) { //as long as no division by 0, expression can be evaluated
         if (resetCounter < 1 && !enabledM) {
-            document.getElementById("value1").innerHTML = "CHUBBA";
             getLastTwoInputs();
             memoryX = secureEval(memoryX);
         }
         else { //Enters here if repeatedly pushing enter button
-            document.getElementById("value1").innerHTML = lastTwoInputs;
-            document.getElementById("value2").innerHTML = memoryX;
-
             let symbol = lastTwoInputs; //symbol is purely visual, does not deal with calculations
             if (/\*/.test(symbol)) { //For visual clarity of users
                 symbol = symbol.replace("*","x");
@@ -125,8 +113,22 @@ function equals() {
             else if (/\//.test(symbol)) {
                 symbol = symbol.replace("/","÷")
             }
-            document.getElementById("operationDisplay").innerHTML = (memoryX + symbol); //affects purely the listing of operations done
-            memoryX = secureEval(memoryX + lastTwoInputs);
+
+            if (enabledM && lastOperator.includes("-")) {
+                if (memoryX < 0) {
+                    document.getElementById("operationDisplay").innerHTML = (symbol + memoryX); //affects purely the listing of operations done
+                    memoryX = secureEval(lastTwoInputs + memoryX.toString().replace("-",""));
+                }
+                else {
+                    document.getElementById("operationDisplay").innerHTML = (symbol + memoryX); //affects purely the listing of operations done
+                    memoryX = secureEval(lastTwoInputs + memoryX); 
+                }
+            }
+            else {
+                document.getElementById("operationDisplay").innerHTML = (memoryX + symbol); //affects purely the listing of operations done
+                memoryX = secureEval(memoryX + lastTwoInputs);  
+            }
+
             lastNumeral = memoryX;
         }   
     }
@@ -160,6 +162,7 @@ function AC(x) {
         document.getElementById("deadButton").value = "M";
         document.getElementById("addition").value = "+";
         document.getElementById("subtract").value = "-";
+        document.getElementById("+-").value = "+/-";
         document.getElementById("AC").value = "AC";
         AC("AC");
     }
@@ -178,17 +181,23 @@ function addDecimal() {
      displayX(".");
 }
 
-function negate() { // should apply a status of being negated, this is removed on the next integer input
-    if (!operatorRegex.test(lastInput)) {
-        document.getElementById("resultDisplay").innerHTML += "*-1";
-        memoryX += "*-1";
+function negate(x) { // should apply a status of being negated, this is removed on the next integer input
+    if (x == "+/-") {
+        if (!operatorRegex.test(lastInput)) {
+            document.getElementById("resultDisplay").innerHTML += "*-1";
+            memoryX += "*-1";
+        }
+        else {
+                //inital negate reverse works, more than 2 times deletes resultDisplay
+                memoryX = memoryX.toString().slice(0,memoryXLength - 3);
+                document.getElementById("resultDisplay").innerHTML = document.getElementById("resultDisplay").innerHTML.slice(0,memoryXLength - 3);
+        }
+        displayX("negate");
     }
     else {
-            //inital negate reverse works, more than 2 times deletes resultDisplay
-            memoryX = memoryX.toString().slice(0,memoryXLength - 3);
-            document.getElementById("resultDisplay").innerHTML = document.getElementById("resultDisplay").innerHTML.slice(0,memoryXLength - 3);
+        memoryX = memoryValue;
+        document.getElementById("resultDisplay").innerHTML = memoryX;
     }
-    displayX("negate");
 }
 
 function percentage() {
@@ -217,9 +226,13 @@ function updateLastInput(x) {
     lastInput = x;
     if (/M/.test(x)) {
         lastOperator = x.toString().charAt(1);
-        lastTwoInputs = lastOperator + memoryValue.toString();
-        document.getElementById("value1").innerHTML = lastTwoInputs;
-
+        if (lastOperator == "+") {
+            lastTwoInputs = lastOperator + memoryValue.toString(); 
+        }
+        else {
+            lastTwoInputs = memoryValue.toString() + lastOperator;
+        }
+        // document.getElementById("value1").innerHTML = lastTwoInputs;
     }
     else if (operatorRegex.test(x) || /=/.test(x) || /AC/.test(x)) {
         getLastTwoInputs();

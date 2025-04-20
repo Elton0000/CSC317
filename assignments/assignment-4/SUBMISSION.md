@@ -1,17 +1,29 @@
 Name: Elton Nhan
 Student ID: 923660358
 GitHub Username: Elton0000
-Assignment Number: 3
+Assignment Number: 4
+Github Repository: https://github.com/Elton0000/CSC317
+Github Pages: https://elton0000.github.io/CSC317/assignments/assignment-4/index
 
-Portfolio Styling Assignment: Human vs. AI CSS Challenge
-Description:
-Now that we've learned quite a bit of CSS, the idea is to upgrade our plain HTML documents to something that pops out more. Should look closer to a website than a google doc now.
-
-Approach / What I Did:
-I took my time going from top to bottom, and did the changes in chronological order. First, I started with my own picture. From here, I would learn about how containers and individual IDs interacted with each other, while also learning about what different css styles did. The next significant part was when I started working on my navigation links. I learned more about the "display:flex" styling, and experimented with hover effects. This is prompted me to go back to make picture, because what I was originally aiming for was to have my own face disappear and be replaced by a yellow star. I tried to make the Vietname flag with overlaying effects, but unfortunately was not able to. Moving down to the About me section, now I was centering images and text. It was here when I first used animations like "scale()" and I later applied this to my navigation section as well. Moving on to the school section, I was trying to find a way to make whole images be able to redirect to another site, and I eventually stumbled across a solution that I liked on Overstack. The idea was to have hyperlinked text, set a background image on that, and then hide the text. I'm sure there was a more efficient way to do that, but it was fun to figure out. The rest of the CSS is me trying to cut as much empty space as possible, while repeating what I did for the first half of it.
-
-Discussion:
-I learned how to apply CSS to HTML files, and the importance of knowing how selectors work, and how specific you need to be sometimes. 
-
-Version:
-Honestly, I think the hybrid allowed for the most thought provoking moments, but writing the CSS by myself was where I learned the most. So if I had to pick, I prefered writing my own CSS file because it was the most stimulating? It feels good when you have an idea and the code finally clicks.
+Assignment 4: The Exciting World of JavaScript
+Description: The goal of this assignment was to make a near 1 to 1 copy of a phone app's calculator with the use of HTML, CSS, and Javascript. So that's exactly what I attempted. First I structured the calculator with a combination of divs and input tags(completely forgot about forms until I saw some code snippets in class), a bit sloppy but it was functional. Then I used CSS to put everything in their correct positions albeit not the cleanest looking calculator. With some more CSS, the calculator became more alive with some motion effects. Then finally, after a very long session of Javascript, the calculator is mostly functional with the exception of a few edge cases.
+-Using the negate in succession does not look like how it should on IOS calculators, and also applies *-1 on repeat reather than taking away a *-1 and reapplying it
+-I couldn't get % to work as a modulo operator
+	x 5%5 returns 0 on IOS calculators while 5%5 on my calculator returns 0.25 because it treats the calculation as 5 / 100 x 5
+-There's also a weird visual when inputing an integer -> operator -> %
+	x Instead of replacing the operator with %, it removes itself
+	x Doesn't seem to bug out the code though, just needs an extra step
+-Unsure of how to correctly use flash button and the keymap stuff
+-Tried to implement the Memory Functions, and they mostly work
+	x the M- function was especially hard since I needed to flip the order of operations to make the program work like how it would on 		mobile calculators (I don't know how it works on IOS, only what I saw google explain)
+Challenges: 
+-I don't know how I'll ever get better at CSS, trying to get everything to be as perfect as possible grates my nerves. The validator was really helpful in letting me know which properties worked with what tags.
+-One of the most annoying things I've had a chance of experiencing now that I've done my work in Javascript, is having no visible errors. In Java and C++, even if the compiler isn't the most helpful at times, they'll let you know when you've done something wrong. I didn't realize how scary logical errors were until I worked with this programming language. For example, in the middle of my code, ocassionally I'll right something like document.getElementById(value).innerHTML = "GUAVA"; just so I can check to see that my code works in that section; but then because I forgot the quotations by "value", nothing happens and I'm just scratching my head for 30+ minutes.
+-My code is plagued with if and else statements(I'm sorry), and sometimes it get's kind of hard to track where in the program my code is heading towards.
+Additional Features:
+-The Memory Functions?
+Acknowledgement
+-W3Schools helped a lot
+-Not my proudest moments, but I did have ChatGPT analyze some of my code when I was trying to debug it as the due date drew closer
+-Some of the code posted on Canvas I just copy and pasted into mine
+	xAlso marked in js file under "Borrowed Code" comment
