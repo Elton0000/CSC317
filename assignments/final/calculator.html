@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+    
+    <Title>Calculator App</Title>
+    <meta charset = "UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <meta name = "description" content = "A calculator app">
+    <meta name = "keywords" content = "HTML, calculator, javascript, computing">
+    <meta name = "author" content = "Elton Nhan">
+    <script src = "scripts/calculatorJavascript.js">
+    </script> 
+    <link rel="stylesheet" href="styles/calculator.css">
+        </head>
+        
+    <body>
+        <main>
+            <p id = "operationDisplay"></p>
+            <p id = "resultDisplay">0</p>
+            
+        <div id = "row1">
+            <input id = "AC" class = "oneButtonFunction" type = "button" value = "AC" onclick = "AC(this.value)">
+            <input id = "+-" class = "oneButtonFunction" type = "button" value = "+/-" onclick = "negate(this.value)">
+            <input id = "%" class = "oneButtonFunction" type = "button" value = "%" onclick = "percentage()">
+            <input id = "divide" class = "operators" type = "button" value = "÷" onclick = "operator('/')"> 
+        </div>
+
+        <div id = "row2">
+            <input id = "seven" class = "Input" type = "button" value = "7" onclick = "inputNum(7)">
+            <input id = "eight" class = "Input" type = "button" value = "8" onclick = "inputNum(8)">
+            <input id = "nine" class = "Input" type = "button" value = "9" onclick = "inputNum(9)">
+            <input id = "multiply" class = "operators" type = "button" value = "x" onclick = "operator('*')">
+        </div>
+
+        <div id = "row3">
+            <input id = "four" class = "Input" type = "button" value = "4" onclick = "inputNum(4)">
+            <input id = "five" class = "Input" type = "button" value = "5" onclick = "inputNum(5)">
+            <input id = "six" class = "Input" type = "button" value = "6" onclick = "inputNum(6)">
+            <input id = "subtract" class = "operators" type = "button" value = "-" onclick = "operator(this.value)">
+        </div> 
+
+        <div id = "row4">
+            <input id = "one" class = "Input" type = "button" value = "1" onclick = "inputNum(1)">
+            <input id = "two" class = "Input" type = "button" value = "2" onclick = "inputNum(2)">
+            <input id = "three" class = "Input" type = "button" value = "3" onclick = "inputNum(3)">
+            <input id = "addition" class = "operators" type = "button" value = "+" onclick = "operator(this.value)">
+        </div>
+
+        <div id = "row5">
+            <input id = "deadButton" class = "Input" type = "button" value = "M" onclick = "hello()">  
+            <input id = "zero" class = "Input" type = "button" value = "0" onclick = "inputNum(0)">
+            <input id = "decimal" class = "Input" type = "button" value = "." onclick = "addDecimal()"> 
+            <input id = "equals" class = "operators" type = "button" value = "=" onclick = "equals()">
+            <!--
+            Returns the value of an operation done on input 2 by input 1.
+            
+            On my phone, it seems to record the last operation and numeric input, then apply it on the current value.
+            2 x 2 = 4, but if you input an 8 followed by =operator, you get 8 x 2 = 16
+            Pressing =operator when only a single input is fed does nothing to the current state of the program
+            -->
+        </div>
+        </main>
+        <a href = "index.html">link back to index</a>
+        </body>  
+        
+</html>
