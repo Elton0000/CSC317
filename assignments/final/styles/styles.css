@@ -111,7 +111,15 @@ nav > ul > li::selection {
 li {
     font-size:var(--paragraphFontSize) ;
 }
-
+#FeaturedSection {
+    display:block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+#Featured {
+    text-align:center;
+}
 #Bio {
 text-align: center;
 }
